@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import axios from 'axios';
+
 import './App.css';
 
 function App() {
-  const url = 'https://wclub.app/api/v2/schedulers/increase-advertise-count?access_token=T9k6MYKUVdYv9olMTQTSC7t9O6Igx87Q';
+  const url = `https://wclub.app/api/v2/schedulers/increase-advertise-count?access_token=${process.env.ACCESS_TOKEN}`;
 
   useEffect(() => {
     axios.post(url).then(() => console.log('count + 1')).catch(error => console.error(error));
